@@ -36,6 +36,7 @@ export default function Home() {
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   React.useEffect(() => {
     setCurrentImageIndex(0);
@@ -313,13 +314,37 @@ export default function Home() {
     }
   }, [terminalHistory]);
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: "", email: "", message: "" });
-      setFormSubmitted(false);
-    }, 3000);
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "YOUR_ACCESS_KEY_HERE",
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `New Portfolio Contact from ${formData.name}`,
+        }),
+      });
+      const result = await response.json();
+      if (result.success) {
+        setFormSubmitted(true);
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setFormSubmitted(false), 5000);
+      } else {
+        alert("Failed to send message: " + (result.message || "Unknown error"));
+      }
+    } catch (err) {
+      alert("Error sending message. Please check your network and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -849,13 +874,15 @@ export default function Home() {
 
                 <button 
                   type="submit" 
-                  disabled={formSubmitted}
+                  disabled={isSubmitting || formSubmitted}
                   className="w-full px-6 py-3 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-lg transition shadow-lg shadow-blue-500/15 flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer"
                 >
                   {formSubmitted ? (
                     <>
                       <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Message Sent Successfully!
                     </>
+                  ) : isSubmitting ? (
+                    "Sending Message..."
                   ) : (
                     "Send Message"
                   )}

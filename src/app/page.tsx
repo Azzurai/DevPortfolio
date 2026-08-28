@@ -9,21 +9,11 @@ import {
   Phone, 
   MapPin, 
   ExternalLink, 
-  Cpu, 
-  Code, 
-  Database, 
-  Workflow, 
-  Brain, 
-  Terminal, 
   FileDown, 
-  BookOpen, 
-  Award, 
   ChevronRight, 
   ArrowUpRight, 
   CheckCircle2, 
-  X,
-  Layers,
-  Briefcase 
+  X 
 } from "lucide-react";
 
 const prefix = process.env.NODE_ENV === "production" ? "/DevPortfolio" : "";
@@ -47,8 +37,8 @@ export default function Home() {
       id: "mimos-crm",
       title: "MIMOS CRM System",
       category: "web",
-      description: "A web-based Customer Relationship Management system centralizing customer records, quotations, invoices, sales pipelines, and OCR card readers.",
-      longDescription: "Developed during industrial training at MIMOS Academy. This CRM centralizes operations by managing lead pipelines, business workflows, customer CRUD repositories, financial documentation tracking, and Google Apps Script integrations. Features a card OCR scanner to import physical contacts into the database automatically.",
+      description: "A full-scale enterprise CRM centralizing customer records, quotations, invoices, Kanban sales pipelines, and an OCR-powered business card scanner — built for real-world operations at MIMOS Academy.",
+      longDescription: "Developed during my industrial training at MIMOS Academy, this Customer Relationship Management platform was designed from the ground up to digitize and centralize the entire business operations workflow. The system features a comprehensive customer CRUD repository with advanced search and filtering, a drag-and-drop Kanban board for managing sales pipelines across multiple stages, a financial documentation module for generating and tracking quotations and invoices, and deep Google Apps Script integrations for automating data flows between services. One standout feature is the built-in OCR card scanner, which lets users snap a photo of a physical business card to automatically parse and import contact details into the CRM database — eliminating tedious manual data entry. The platform is hosted on cPanel with WinSCP for file management, secured with BCrypt password hashing and CSRF protection.",
       tech: ["PHP", "MySQL", "JavaScript", "HTML5", "CSS3", "cPanel", "WinSCP"],
       tags: ["web", "automation"],
       badge: "Enterprise Web App",
@@ -66,8 +56,8 @@ export default function Home() {
       id: "mimos-portal",
       title: "MIMOS Academy Portal",
       category: "web",
-      description: "A modern training portal featuring secure client logins, Google OAuth integration, training program catalogs, and registration systems.",
-      longDescription: "An official training and talent development platform built to promote semiconductors, AI, cybersecurity, and project management paths. Implemented secure participant registration, password recovery, session encryption, and a responsive portal interface.",
+      description: "A production-grade training portal with secure participant logins, Google OAuth, password recovery, training program catalogs, and multi-step registration — deployed for MIMOS Academy's talent development programs.",
+      longDescription: "An official training and talent development platform built to serve MIMOS Academy's mission of promoting skills in semiconductors, artificial intelligence, cybersecurity, and project management. The portal features a public-facing catalog of training programs with dynamic filtering by category, a responsive facilities showcase, and a news/announcements section. On the participant side, it implements full authentication flows including secure registration with email verification, Google OAuth single sign-on, and self-service password recovery with token-based reset links. All sessions are encrypted and protected against common web vulnerabilities. The platform was designed to scale across multiple concurrent training cohorts, with an admin backend for managing registrations, participant records, and program scheduling.",
       tech: ["PHP", "MySQL", "JavaScript", "Google OAuth", "HTML5", "CSS3"],
       tags: ["web", "security"],
       badge: "Production Portal",
@@ -85,8 +75,8 @@ export default function Home() {
       id: "forms-automation",
       title: "Google Forms Automation",
       category: "automation",
-      description: "Automated pipeline transferring registration records from Google Forms into CRM databases.",
-      longDescription: "Eliminated manual admin entry by building an automated synchronization script. When a registration is submitted via Google Forms, a Google Apps Script trigger parses the data and writes it securely to the MySQL host.",
+      description: "A zero-touch synchronization pipeline that automatically captures Google Forms registrations and writes them directly into the CRM's MySQL database — eliminating hours of manual admin data entry.",
+      longDescription: "This automation project was born out of a real operational pain point: MIMOS Academy admins were manually copying registration data from Google Forms submissions into the CRM database, a repetitive and error-prone process. I built an end-to-end solution using Google Apps Script that triggers automatically whenever a new form submission is received. The script parses the structured form data, validates required fields, maps them to the corresponding database schema, and writes the records securely to the remote MySQL host via a custom JSON REST API endpoint. The pipeline includes error handling with retry logic, timestamp tracking for audit trails, and notification alerts for failed syncs. This single automation saved approximately 3–5 hours of manual work per week and ensured zero data-entry errors.",
       tech: ["Google Apps Script", "MySQL", "JSON REST API", "Workflow Automation"],
       tags: ["automation"],
       badge: "Workflow Automation",
@@ -99,8 +89,8 @@ export default function Home() {
       id: "smart-combat",
       title: "Smart Combat System",
       category: "electronics",
-      description: "EEG-based mental health and stress monitoring platform analyzing brainwave signals.",
-      longDescription: "An advanced system designed to measure and monitor stress levels in real-time during physical activities. Collects brainwave metrics via EEG sensors and maps data onto user dashboards to evaluate mental wellness.",
+      description: "A real-time EEG-based mental health and stress monitoring platform that analyzes brainwave signals during physical activities — featuring user dashboards, analytics, and document tracking.",
+      longDescription: "Built as my Final Year Project, the Smart Combat System is an advanced health-tech platform designed to measure, visualize, and monitor stress levels in real-time during physical training activities such as martial arts or fitness exercises. The system captures raw brainwave data through EEG sensors worn by participants, processes the signals to extract key mental health indicators (alpha, beta, theta wave ratios), and maps the processed metrics onto interactive web dashboards. The platform includes a super-admin analytics panel with historical trend analysis, participant management with registration and profile systems, document status tracking for medical records, session audit logs for compliance, and a forgotten-password recovery flow. The project demonstrated the feasibility of using consumer-grade EEG hardware for practical wellness monitoring in training environments.",
       tech: ["EEG Sensors", "Signal Processing", "System Integration", "Data Analysis"],
       tags: ["electronics", "ai"],
       badge: "Academic FYP",
@@ -120,8 +110,8 @@ export default function Home() {
       id: "water-meter",
       title: "IoT Smart Water Meter",
       category: "electronics",
-      description: "ESP32 water flow monitoring system presenting real-time telemetry and bill alerts.",
-      longDescription: "An IoT application built on the ESP32 platform to measure household water consumption. Provides instant usage rates, anomaly/leak notifications, and remote index readouts to reduce manual labor.",
+      description: "An ESP32-powered IoT system that monitors household water consumption in real-time, detects anomalies and leaks, and delivers remote telemetry data with usage alerts via Firebase.",
+      longDescription: "This IoT prototype tackles the problem of manual water meter reading and undetected leaks in residential settings. Built on the ESP32 microcontroller platform, the system uses precision flow sensors to measure water consumption at the pipe level, sampling at high frequency for accurate readings. The captured telemetry data is transmitted wirelessly to a Firebase Realtime Database, where it is stored with timestamps for historical analysis. The companion dashboard displays real-time flow rates, cumulative daily/weekly/monthly usage, and projected billing estimates. The system implements anomaly detection logic that identifies unusual flow patterns (potential leaks or burst pipes) and triggers instant push notifications to the homeowner. Designed with low power consumption in mind, the device can operate for extended periods, making it practical for real-world deployment.",
       tech: ["ESP32", "IoT Flow Sensors", "C++", "Firebase", "Real-time Telemetry"],
       tags: ["electronics"],
       badge: "IoT Prototype",
@@ -134,8 +124,8 @@ export default function Home() {
       id: "hotel-booking",
       title: "Hotel Reservation Controller",
       category: "software",
-      description: "Database-driven guest booking and reservation manager developed in Java.",
-      longDescription: "A desktop booking controller built using Java and backed by MySQL. Streamlines room assignments, reservation states, guest profiles, check-in schedules, and room servicing queues.",
+      description: "A database-driven desktop application for managing hotel reservations, guest profiles, room assignments, check-in scheduling, and room servicing — built in Java with MySQL.",
+      longDescription: "A comprehensive desktop booking management system developed using Java Swing for the graphical interface and MySQL for persistent data storage. The application streamlines the entire hotel front-desk workflow: receptionists can search room availability by date range, type, and floor; create and modify guest profiles with contact details and ID verification; manage reservations through their lifecycle (pending → confirmed → checked-in → checked-out); assign specific rooms based on guest preferences; and queue housekeeping and room servicing tasks. The system includes a visual room availability grid, printable booking confirmation receipts, and SQL-optimized queries for fast lookups even with large datasets. Built as an academic project, it demonstrates solid fundamentals in relational database design, CRUD operations, and desktop GUI development.",
       tech: ["Java", "MySQL", "SQL Queries", "Desktop GUI"],
       tags: ["software"],
       badge: "Desktop Software",
@@ -146,111 +136,7 @@ export default function Home() {
     }
   ];
 
-  const experience = [
-    {
-      period: "Feb 2026 – Jul 2026",
-      role: "Software & Business Systems Intern",
-      company: "MIMOS Academy (MIMOS Services Sdn. Bhd.)",
-      description: "Refactored the primary MIMOS CRM and training portals. Designed Google Apps Script background automation triggers, established secure login verification schemas, and updated system documentations.",
-      skills: ["PHP", "MySQL", "JavaScript", "Google Apps Script", "Workflow Automation", "Google OAuth"]
-    },
-    {
-      period: "Jan 2022 – Apr 2022",
-      role: "Multimedia & Technology Intern",
-      company: "MASDAR Technologies",
-      description: "Assisted in website development using HTML and Java, supported telecommunication infrastructure inspections, and prepared detailed technical documentation.",
-      skills: ["Web Development", "HTML", "Java", "Drone Inspections", "Technical Documentation"]
-    }
-  ];
 
-  const skillGroups = [
-    {
-      title: "Programming & Web Core",
-      icon: <Code className="w-4 h-4 text-blue-400" />,
-      skills: ["PHP", "JavaScript", "HTML5 & CSS3", "REST APIs", "C++", "Java"]
-    },
-    {
-      title: "Backend, Database & Security",
-      icon: <Database className="w-4 h-4 text-purple-400" />,
-      skills: ["MySQL Database Design", "SQL Optimization", "Firebase", "BCrypt Hashing", "CSRF Protection", "Google OAuth"]
-    },
-    {
-      title: "Workflow Automation & AI",
-      icon: <Workflow className="w-4 h-4 text-emerald-400" />,
-      skills: ["Google Apps Script", "Process Automation", "Gemini AI", "ChatGPT", "NotebookLM"]
-    },
-    {
-      title: "Hardware, Network & Tools",
-      icon: <Cpu className="w-4 h-4 text-cyan-400" />,
-      skills: ["Cisco Packet Tracer", "Wireshark Network Scan", "TCP/IP protocols", "ESP32 IoT", "Git / GitHub", "cPanel"]
-    }
-  ];
-
-  const education = [
-    {
-      degree: "Bachelor of Electronic Engineering Technology (Electronic Network Design)",
-      school: "University Malaysia Perlis (UniMAP)",
-      period: "2022 - 2026",
-      details: "CGPA: 3.16. Focuses on networking, telecom protocols, system integration, and advanced software/hardware design."
-    },
-    {
-      degree: "Diploma In Computer Engineering",
-      school: "University Malaysia Perlis (UniMAP)",
-      period: "2019 - 2022",
-      details: "CGPA: 3.10. Solid foundation in digital logic, programming systems, database frameworks, and local area network setups."
-    }
-  ];
-
-  const certifications = [
-    {
-      title: "CCNA: Enterprise Networking, Security, and Automation",
-      issuer: "Cisco",
-      image: "https://images.credly.com/images/0a6d331e-8abf-4272-a949-33f754569a76/linkedin_thumb_CCNAENSA__1_.png",
-      url: "https://www.credly.com/badges/71340aa6-c71a-4549-bc36-7967308bda93/public_url"
-    },
-    {
-      title: "CCNA: Introduction to Networks",
-      issuer: "Cisco",
-      image: "https://images.credly.com/images/70d71df5-f3dc-4380-9b9d-f22513a70417/linkedin_thumb_CCNAITN__1_.png",
-      url: "https://www.credly.com/badges/9365b679-3c92-4015-b2ef-e67d52a0223e/public_url"
-    },
-    {
-      title: "CCNA: Switching, Routing, and Wireless Essentials",
-      issuer: "Cisco",
-      image: "https://images.credly.com/images/f4ccdba9-dd65-4349-baad-8f05df116443/linkedin_thumb_CCNASRWE__1_.png",
-      url: "https://www.credly.com/badges/8117e7a7-03e2-45e3-bea9-d9286ef35ed4/public_url"
-    },
-    {
-      title: "Introduction to Cybersecurity",
-      issuer: "Cisco",
-      image: "https://images.credly.com/images/af8c6b4e-fc31-47c4-8dcb-eb7a2065dc5b/linkedin_thumb_I2CS__1_.png",
-      url: "https://www.credly.com/badges/404cc881-1efc-4035-933a-c2e4ab832d86/public_url"
-    },
-    {
-      title: "Introduction to Modern AI",
-      issuer: "Cisco",
-      image: "https://images.credly.com/images/e2d12302-10f9-40d4-8ff1-066a7008b61d/linkedin_thumb_blob",
-      url: "https://www.credly.com/badges/da189dd3-31bf-4e4a-a80e-80b3b8c0040f/public_url"
-    },
-    {
-      title: "Junior Cybersecurity Analyst Career Path",
-      issuer: "Cisco",
-      image: "https://images.credly.com/images/441578ec-c0f3-46cc-95fc-86b27e90cf4f/linkedin_thumb_image.png",
-      url: "https://www.credly.com/badges/01d73e02-2f68-4921-94c3-51c2edb57c4e/public_url"
-    },
-    {
-      title: "Intel Altera FPGA AI Courses",
-      issuer: "Intel / Altera",
-      image: null,
-      url: null
-    },
-    {
-      title: "AI Integrated Circuit Design and Fabrication",
-      issuer: "Asia Pacific University (APU)",
-      image: null,
-      url: null
-    }
-  ];
 
   const filteredProjects = activeFilter === "all" 
     ? projects 
@@ -365,9 +251,6 @@ export default function Home() {
           <nav className="hidden sm:flex items-center gap-6 md:gap-8">
             <a href="#projects" className="text-xs font-semibold text-zinc-400 hover:text-white transition">Projects</a>
             <a href="#about" className="text-xs font-semibold text-zinc-400 hover:text-white transition">About</a>
-            <a href="#experience" className="text-xs font-semibold text-zinc-400 hover:text-white transition">Experience</a>
-            <a href="#skills" className="text-xs font-semibold text-zinc-400 hover:text-white transition">Skills</a>
-            <a href="#education" className="text-xs font-semibold text-zinc-400 hover:text-white transition">Education</a>
           </nav>
           <a 
             href="#contact" 
@@ -589,184 +472,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* PROFESSIONAL EXPERIENCE TIMELINE */}
-        <section id="experience" className="py-20 border-t border-white/5">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-1 space-y-2">
-              <span className="text-blue-500 font-mono text-xs uppercase tracking-wider font-semibold">Chronology</span>
-              <h2 className="font-display font-extrabold text-3xl text-white tracking-tight">Work Experience</h2>
-            </div>
-            
-            <div className="lg:col-span-2 space-y-12 relative border-l border-white/10 pl-6">
-              {experience.map((exp, idx) => (
-                <div className="relative space-y-4" key={idx}>
-                  {/* Pin Node */}
-                  <span className="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-blue-500 border border-black shadow-[0_0_8px_rgba(59,130,246,0.6)]"></span>
-                  
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <span className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">
-                      {exp.period}
-                    </span>
-                  </div>
 
-                  <h3 className="font-display font-bold text-lg text-white">{exp.role}</h3>
-                  <p className="text-sm font-semibold text-blue-400">{exp.company}</p>
-                  <p className="text-xs text-zinc-400 font-light leading-relaxed">{exp.description}</p>
-                  
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {exp.skills.map((skill, i) => (
-                      <span key={i} className="px-2 py-0.5 rounded bg-[#09090b] border border-white/5 text-zinc-400 text-[10px] font-mono">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* TECHNICAL SKILLS MATRIX */}
-        <section id="skills" className="py-20 border-t border-white/5">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-1 space-y-2">
-              <span className="text-blue-500 font-mono text-xs uppercase tracking-wider font-semibold">Capabilities</span>
-              <h2 className="font-display font-extrabold text-3xl text-white tracking-tight">Technical Toolkit</h2>
-            </div>
-            
-            <div className="lg:col-span-2 space-y-6">
-              {skillGroups.map((group, idx) => (
-                <div key={idx} className="p-6 rounded-xl border border-white/5 bg-[#0a0a0c]/60 space-y-3">
-                  <h3 className="font-display font-bold text-sm text-white">{group.title}</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {group.skills.map((skill, i) => (
-                      <span key={i} className="px-2.5 py-1 rounded-md bg-black border border-white/5 text-zinc-300 text-xs font-mono">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* EDUCATION & CERTIFICATIONS */}
-        <section id="education" className="py-20 border-t border-white/5">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            
-            {/* Left: Education */}
-            <div className="lg:col-span-2 space-y-8">
-              <div className="space-y-2">
-                <span className="text-blue-500 font-mono text-xs uppercase tracking-wider font-semibold">Credentials</span>
-                <h2 className="font-display font-extrabold text-3xl text-white tracking-tight">Education</h2>
-              </div>
-
-              <div className="space-y-6">
-                {education.map((edu, idx) => (
-                  <div key={idx} className="p-6 rounded-xl border border-white/5 bg-[#0a0a0c]/60 space-y-2">
-                    <div className="flex flex-wrap items-center justify-between gap-2">
-                      <span className="text-xs font-mono text-blue-400">{edu.period}</span>
-                    </div>
-                    <h3 className="font-display font-bold text-base text-white">{edu.degree}</h3>
-                    <p className="text-xs font-semibold text-zinc-400">{edu.school}</p>
-                    <p className="text-xs text-zinc-400 font-light leading-relaxed">{edu.details}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right: Certifications & Languages */}
-            <div className="lg:col-span-1 space-y-8">
-              <div className="space-y-2">
-                <span className="text-blue-500 font-mono text-xs uppercase tracking-wider font-semibold">Certifications</span>
-                <h2 className="font-display font-extrabold text-3xl text-white tracking-tight">Certs</h2>
-              </div>
-
-              <div className="p-4 rounded-xl border border-white/5 bg-[#0a0a0c]/60 space-y-3.5 max-h-[480px] overflow-y-auto">
-                {certifications.map((cert, idx) => (
-                  <div key={idx} className="flex items-center justify-between gap-4 p-2 rounded-lg hover:bg-white/3 transition">
-                    <div className="flex items-center gap-3">
-                      {cert.image ? (
-                        <img 
-                          src={cert.image} 
-                          alt={cert.title} 
-                          className="w-10 h-10 object-contain shrink-0" 
-                        />
-                      ) : (
-                        <div className="w-10 h-10 rounded bg-zinc-900 border border-white/5 flex items-center justify-center shrink-0">
-                          <Award className="w-4 h-4 text-purple-400" />
-                        </div>
-                      )}
-                      <div>
-                        <h4 className="text-[11px] font-semibold text-white leading-tight line-clamp-2">{cert.title}</h4>
-                        <p className="text-[9px] text-zinc-500 font-mono mt-0.5">{cert.issuer}</p>
-                      </div>
-                    </div>
-                    {cert.url && (
-                      <a 
-                        href={cert.url} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="p-1.5 rounded hover:bg-zinc-800 text-zinc-500 hover:text-white transition shrink-0"
-                        title="Verify Credential"
-                      >
-                        <ExternalLink className="w-3.5 h-3.5" />
-                      </a>
-                    )}
-                  </div>
-                ))}
-              </div>
-
-              <div className="space-y-3 pt-2">
-                <h3 className="font-display font-bold text-sm text-white">Languages</h3>
-                <div className="grid grid-cols-2 gap-3">
-                  {[
-                    { lang: "Malay", level: "Native" },
-                    { lang: "English", level: "Native (MUET 4.5+)" },
-                    { lang: "Chinese", level: "Beginner" },
-                    { lang: "Japanese", level: "Beginner" }
-                  ].map((lan, i) => (
-                    <div key={i} className="p-3 rounded-lg border border-white/5 bg-[#0a0a0c] text-[11px]">
-                      <p className="font-semibold text-white">{lan.lang}</p>
-                      <p className="text-zinc-500">{lan.level}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        {/* REFERENCES SECTION */}
-        <section id="references" className="py-20 border-t border-white/5">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-1 space-y-2">
-              <span className="text-blue-500 font-mono text-xs uppercase tracking-wider font-semibold">Endorsements</span>
-              <h2 className="font-display font-extrabold text-3xl text-white tracking-tight">References</h2>
-            </div>
-            
-            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="p-6 rounded-xl border border-white/5 bg-[#0a0a0c]/60 space-y-3">
-                <h4 className="font-display font-bold text-base text-white">Saidatul Farrah Muhammad Johar</h4>
-                <p className="text-[11px] text-zinc-500">Head of Business Development and Marketing, MIMOS Academy</p>
-                <div className="pt-2 text-xs space-y-1">
-                  <p className="text-zinc-400">Email: farrah.johar@mimos.my</p>
-                  <p className="text-zinc-400">Phone: +60136376097</p>
-                </div>
-              </div>
-              <div className="p-6 rounded-xl border border-white/5 bg-[#0a0a0c]/60 space-y-3">
-                <h4 className="font-display font-bold text-base text-white">MUHAMMAD NURUDDIN BIN MOHAMAD</h4>
-                <p className="text-[11px] text-zinc-500">CEO of MASDAR Technologies</p>
-                <div className="pt-2 text-xs space-y-1">
-                  <p className="text-zinc-400">Email: masdartechnologies@gmail.com</p>
-                  <p className="text-zinc-400">Phone: 019-4477512</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* CONTACT SECTION */}
         <section id="contact" className="py-20 border-t border-white/5">

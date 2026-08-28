@@ -463,7 +463,7 @@ export default function Home() {
                 I hold a <strong>Bachelor's Degree in Electronic Engineering Technology (Electronic Network Design)</strong> and a <strong>Diploma in Computer Engineering</strong> from Universiti Malaysia Perlis (UniMAP).
               </p>
               <p>
-                My background bridges full-stack software development with electronic systems. I specialize in designing responsive business portals (such as the **MIMOS CRM** and **MIMOS Academy training platform**), scripting workflow triggers, and deploying embedded IoT prototypes.
+                My background bridges full-stack software development with electronic systems. I specialize in designing responsive business portals (such as the <strong>MIMOS CRM</strong> and <strong>MIMOS Academy training platform</strong>), scripting workflow triggers, and deploying embedded IoT prototypes.
               </p>
               <p>
                 I focus on writing structured, documentation-backed backend software while remaining comfortable configuring network interfaces, debugging routing issues, and building automation pipelines.

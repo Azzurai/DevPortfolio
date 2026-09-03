@@ -15,9 +15,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Hariz Fahmi | Software & Network Engineer Portfolio",
-  description: "Software & Network Engineer with production experience at MIMOS Academy. Built enterprise CRM systems, training portals, IoT prototypes, and workflow automation pipelines. Electronic Engineering graduate from UniMAP.",
-  keywords: ["Software Engineer", "Network Engineer", "Full-Stack Developer", "PHP", "MySQL", "IoT", "MIMOS Academy", "UniMAP", "Malaysia", "Portfolio", "Cisco"],
+  title: "Muhammad Hariz Fahmi | Full-Stack Developer",
+  description: "Full-Stack Developer specializing in PHP, MySQL, JavaScript, backend development, workflow automation, and business web applications.",
+  keywords: [
+    "Full-Stack Developer",
+    "Software Engineer",
+    "Backend Developer",
+    "Automation Engineer",
+    "PHP",
+    "MySQL",
+    "JavaScript",
+    "Google Apps Script",
+    "REST API",
+    "MIMOS Academy",
+    "Portfolio"
+  ],
 };
 
 export default function RootLayout({

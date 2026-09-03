@@ -33,7 +33,7 @@
   }
 }
 
-/* Custom Utilities */
+/* ─── Glass Panels ─── */
 .glass-panel {
   background: var(--bg-glass);
   backdrop-filter: blur(16px) saturate(120%);
@@ -48,6 +48,7 @@
   box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
 }
 
+/* ─── Text Gradients ─── */
 .text-gradient {
   background: linear-gradient(135deg, #ffffff 40%, #a1a1aa 100%);
   -webkit-background-clip: text;
@@ -60,6 +61,7 @@
   -webkit-text-fill-color: transparent;
 }
 
+/* ─── Grid Overlay ─── */
 .grid-overlay {
   background-size: 40px 40px;
   background-image: 
@@ -67,7 +69,7 @@
     linear-gradient(to bottom, var(--bg-grid-color) 1px, transparent 1px);
 }
 
-/* Custom Scrollbar */
+/* ─── Scrollbar ─── */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -85,6 +87,7 @@
   background: #3f3f46;
 }
 
+/* ─── Spotlight Card (mouse follow glow) ─── */
 .spotlight-card {
   position: relative;
 }
@@ -102,8 +105,123 @@
   pointer-events: none;
   transition: opacity 0.5s ease;
   opacity: 0;
+  border-radius: inherit;
 }
 
 .spotlight-card:hover::before {
   opacity: 1;
+}
+
+/* ─── Open to Work Badge (animated gradient border) ─── */
+.open-to-work-wrapper {
+  position: relative;
+  display: inline-flex;
+  border-radius: 9999px;
+  padding: 1.5px;
+  background: linear-gradient(90deg, #10b981, #3b82f6, #a855f7, #10b981);
+  background-size: 300% 100%;
+  animation: gradient-rotate 3s linear infinite;
+}
+
+.open-to-work-wrapper > * {
+  background: #0a0a0c;
+  border-radius: 9999px;
+}
+
+@keyframes gradient-rotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ─── Floating Badges (avatar orbit) ─── */
+.float-badge {
+  animation: float-y 3s ease-in-out infinite;
+}
+
+.float-badge-delayed {
+  animation: float-y 3.5s ease-in-out 0.8s infinite;
+}
+
+.float-badge-delayed-2 {
+  animation: float-y 4s ease-in-out 1.6s infinite;
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ─── Avatar Glow ─── */
+.avatar-glow {
+  animation: avatar-pulse 4s ease-in-out infinite;
+}
+
+@keyframes avatar-pulse {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.05); }
+}
+
+/* ─── Timeline Dot (pulsing ring) ─── */
+.timeline-dot {
+  position: relative;
+}
+
+.timeline-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  background: rgba(59, 130, 246, 0.2);
+  animation: pulse-ring 2.5s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.4; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* ─── Skill Card ─── */
+.skill-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.45);
+}
+
+/* ─── Glow Button ─── */
+.glow-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-button:hover::after {
+  opacity: 1;
+}
+
+/* ─── Value Prop Card ─── */
+.value-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ─── Category Top Stripe ─── */
+.card-stripe {
+  height: 2px;
+  border-radius: 2px 2px 0 0;
 }

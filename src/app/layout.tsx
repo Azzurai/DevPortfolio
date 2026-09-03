@@ -15,9 +15,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Hariz Fahmi | Software Engineer & Backend Developer",
-  description: "Portfolio of Muhammad Hariz Fahmi Bin Mohamad Shahidi. Bachelor in Electronic Engineering Technology (Electronic Network Design). Worked on MIMOS CRM, MIMOS Academy Portal, and workflow automations.",
-  keywords: ["Software Engineer", "Full-Stack Developer", "Backend Developer", "MIMOS Academy", "UniMAP", "Malaysia", "Portfolio"],
+  title: "Muhammad Hariz Fahmi | Software & Network Engineer Portfolio",
+  description: "Software & Network Engineer with production experience at MIMOS Academy. Built enterprise CRM systems, training portals, IoT prototypes, and workflow automation pipelines. Electronic Engineering graduate from UniMAP.",
+  keywords: ["Software Engineer", "Network Engineer", "Full-Stack Developer", "PHP", "MySQL", "IoT", "MIMOS Academy", "UniMAP", "Malaysia", "Portfolio", "Cisco"],
 };
 
 export default function RootLayout({
